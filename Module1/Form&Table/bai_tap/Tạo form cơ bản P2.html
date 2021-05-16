@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="Tạo form cơ bản P2.css">
+</head>
+<body>
+<form class="bodyy">
+    <h2 class="tieude">ĐĂNG KÝ HỌC VIÊN</h2>
+    <p class="hoten">Họ và tên</p>
+    <div class="otrong">
+        <input class="dien" type="text" name="name">
+    </div>
+    <p class="hoten">Ngày sinh</p>
+    <div class="otrong">
+        <input class="dien" type="text" name="birthday">
+    </div>
+    <div>
+        <p class="hoten">Giới tính</p>
+        <div class="otrong">
+            <input type="radio" name="sex" value="male" checked> <p class="size">Nam</p>
+        </div>
+        <div class="sizenu">
+            <input type="radio" name="sex" value="female"> <p class="size">Nữ</p>
+        </div>
+    </div>
+    <p class="hoten">Địa chỉ</p>
+    <textarea class="otrongdiachi" cols="50" rows="4"></textarea>
+    <p class="hoten">Lớp</p>
+    <div class="otrong">
+        <select class="chon">
+            <option class="dien">---Chọn Lớp---</option>
+            <option class="dien">Lớp 1</option>
+            <option class="dien">Lớp 2</option>
+            <option class="dien">Lớp 3</option>
+        </select>
+    </div>
+    <p class="hoten">Email</p>
+    <div class="otrong">
+        <input class="dien" type="text" name="email">
+    </div>
+    <p class="hoten">Điện thoại</p>
+    <div class="otrong">
+        <input class="dien" type="text" name="phone"><br>
+    </div>
+    <div class="submit">
+        <input class="dien" type="submit" value="Đăng ký">
+        <input class="dien" type="reset" value="Nhập lại">
+    </div>
+</form>
+</body>
+</html>
