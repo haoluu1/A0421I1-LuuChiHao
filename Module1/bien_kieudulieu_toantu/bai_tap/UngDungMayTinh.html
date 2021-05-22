@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <input type="text" id="so1">
+    <input type="text" id="so2"><br>
+    <input type="button" id="add" onclick="cal('+')" value="Addition(+)">
+    <input type="button" id="cal" onclick="cal('-')" value="Subtraction(-)">
+    <input type="button" id="mul" onclick="cal('*')" value="Multiplication(X)">
+    <input type="button" id="div" onclick="cal('/')" value="Division(/)">
+    <p id="demo"></p>
+    <script>
+        function cal(ten)
+        {
+            let result;
+            let so1=parseFloat(document.getElementById("so1").value);
+            let so2=parseFloat(document.getElementById("so2").value);
+            switch (ten)
+            {
+                case'+':result=so1+so2;break;
+                case'-':result=so1-so2;break;
+                case'*':result=so1*so2;break;
+                case'/':
+                    if (so2==0)
+                    {
+                        result="không thể chia cho 0";
+                    }
+                    else
+                    {
+                        result=so1/so2;
+                    }
+                    break;
+            }
+            document.getElementById("demo").innerText=result
+        }
+    </script>
+</body>
+</html>

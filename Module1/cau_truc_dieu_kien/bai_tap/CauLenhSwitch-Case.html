@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <input type="text" id="month">
+    <input type="button" onclick="temp()" value="Tính số ngày">
+    <script>
+        function temp()
+        {
+            var month=document.getElementById("month").value;
+            console.log (month);
+            switch (month)
+            {
+                case '1':{
+                    document.write("Có 31 ngày");
+                    break;
+                }
+                case '2':{
+                    document.write("Có 28 hoặc 29 ngày");
+                    break;
+                }
+                default:break;
+            }
+        }
+    </script>
+</body>
+</html>
