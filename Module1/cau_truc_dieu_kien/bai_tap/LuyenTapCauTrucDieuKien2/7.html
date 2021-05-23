@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    var a=parseFloat(prompt('Nhập a: '));
+    var b=parseFloat(prompt('Nhập b: '));
+    var c=parseFloat(prompt('Nhập c: '));
+    var x1;
+    var x2;
+    var d;
+    if(a==0)
+    {
+        if(b==0)
+        {
+            if(c==0)
+            {
+                document.write('pt vô số nghiệm');
+            }
+            else
+            {
+                document.write('pt vô nghiệm');
+            }
+        }
+        else
+        {
+            x1=-c/b;
+            document.write('pt có 1 nghiệm là: '+ x1);
+        }
+    }
+    else
+    {
+        d=b*b-4*a*c;
+        if(d<0)
+        {
+            document.write('pt vô nghiệm');
+        }
+        else if(d===0)
+        {
+            x1=(-b)/2*a;
+            document.write('pt có nghiệm kép là: '+ x1);
+        }
+        else
+        {
+            x1=((-b)+Math.sqrt(d))/(2*a);
+            x2=((-b)-Math.sqrt(d))/(2*a);
+            document.write('pt có 2 nghiệm phân biệt là: '+ x1 +'và'+ x2);
+        }
+    }
+</script>
+</body>
+</html>
