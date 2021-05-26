@@ -6,13 +6,13 @@
 </head>
 <body>
 <input type="button" onclick="choi()" value="Chơi">
-<input type="reset" value="Chơi lại">
 <script>
     function choi()
     {
         var a=parseInt(prompt('Số muốn đoán nhỏ hơn: '));
         var b=parseInt(prompt('Số muốn đoán lớn hơn: '));
         var c=parseInt(b+(Math.random()*a));
+        console.log(c)/;
         var k=0;
         for(k=1;k<=3;k++)
         {
