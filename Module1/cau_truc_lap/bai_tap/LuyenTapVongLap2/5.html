@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    var a=parseInt(prompt('Số tiền ban đầu: '));
+    var b=parseInt(prompt('Số tháng cho vay: '));
+    var c=parseFloat(prompt('Lãi suất hàng tháng: '));
+    var l=0;
+    for(i=1;i<=b;i++)
+    {
+        l=a*c/100;
+        a=a+l;
+    }
+    document.write(l);
+</script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="button" onclick="choi()" value="Chơi">
+<input type="reset" value="Chơi lại">
+<script>
+    function choi()
+    {
+        var a=parseInt(prompt('Số muốn đoán nhỏ hơn: '));
+        var b=parseInt(prompt('Số muốn đoán lớn hơn: '));
+        var c=parseInt(b+(Math.random()*a));
+        var k=0;
+        for(k=1;k<=3;k++)
+        {
+            var x=parseInt(prompt('Số đoán: '));
+            if(x===c)
+            {
+                alert('Đoán đúng');
+                break;
+            }
+            else if(x>c)
+                alert('Nhỏ hơn');
+            else if(x<c)
+                alert('Lớn hơn');
+            else
+                alert('Nằm ngoài');
+        }
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    var a=parseInt(prompt('Nhập chiều dài: '));
+    var b=parseInt(prompt('Nhập chiều rộng: '));
+    for(i=1;i<=a;i++)
+    {
+        document.write('*');
+    }
+    document.write('<br/>');
+    for(j=1;j<=b-2;j++)
+    {
+        document.write('*');
+        for(k=1;k<=a-2;k++)
+        {
+            document.write('&ensp;');
+        }
+        document.write('*');
+        document.write('<br/>');
+    }
+    for(i=1;i<=a;i++)
+        document.write('*');
+</script>
+</body>
+</html>
