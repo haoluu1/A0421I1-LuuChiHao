@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    var r=parseInt(prompt("Nhập bán kính: "));
+    const PI=3.14;
+    var S=tinhDienTich(r);
+    document.write("Diện tích: "+S);
+    document.write("</br>");
+    var C=tinhChuVi(r);
+    document.write("Diện tích: "+C);
+    function tinhDienTich()
+    {
+        var dientich;
+        dientich=PI*(r*r);
+        return dientich;
+    }
+    function tinhChuVi()
+    {
+        var chuvi;
+        chuvi=PI*(r*2);
+        return chuvi;
+    }
+</script>
+</body>
+</html>

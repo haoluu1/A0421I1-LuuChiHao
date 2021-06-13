@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    var chuoi = prompt('Nhập chuỗi: ');
+    const UPPER = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+    const LOWER = 'abcdefghijklmnopqrstuvwxyz';
+    const temp = [];
+
+    for(i=0; i<chuoi.length; i++)
+    {
+        if(UPPER.includes(chuoi[i]))
+        {
+            temp.push(chuoi[i].toLowerCase());
+        }
+        else if(LOWER.includes(chuoi[i]))
+        {
+            temp.push(chuoi[i].toUpperCase());
+        }
+        else
+        {
+            temp.push(chuoi[i]);
+        }
+    }
+    document.write(temp.join(' '));
+</script>
+</body>
+</html>

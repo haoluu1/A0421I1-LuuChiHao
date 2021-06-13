@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+    <button onclick="f_m()">Chuyển đổi feet sang meters</button>
+    <button onclick="m_f()">Chuyển đổi meters sang feet</button>
+<body>
+<script>
+    function f_m()
+    {
+        var f=parseFloat(prompt('Nhập feet: '));
+        var m=0.305*f;
+        document.write(+f+'feet='+m+'meters');
+    }
+    function m_f()
+    {
+        var m=parseFloat(prompt('Nhập meters: '));
+        var f=3.279*m;
+        document.write(+m+'meters='+f+'feet');
+    }
+</script>
+</body>
+</html>

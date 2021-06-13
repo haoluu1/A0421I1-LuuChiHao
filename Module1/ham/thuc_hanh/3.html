@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    var n = parseInt(prompt("Nhập phần tử của mảng: "));
+    var arr = new Array(n);
+    nhapMang(arr);
+    document.write("Các phần tử trong mảng là: "+ arr);
+    document.write("</br>");
+    var minArr = minMang(arr);
+    document.write("Số nhỏ nhất trong mảng: "+ minArr);
+    function nhapMang(array)
+    {
+        for (let i = 0; i < array.length; i++)
+        {
+            array[i] = parseInt(prompt("Moi ban nhap so thu " + (i + 1) + ": "));
+        }
+    }
+    function minMang(arr)
+    {
+        if(arr.length === 0)
+            return -1;
+        let min = arr[0];
+        for(let i = 1; i < arr.length; i++)
+        {
+            if(arr[i] < min)
+            {
+                min = arr[i];
+            }
+        }
+        return min;
+    }
+</script>
+</body>
+</html>
