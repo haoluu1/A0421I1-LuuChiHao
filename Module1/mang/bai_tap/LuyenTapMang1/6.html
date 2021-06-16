@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    var soNguyen= new Array();
+    for(var i=0;i<10;i++)
+    {
+        soNguyen[i] = parseInt(prompt("Nhập số nguyên: "));
+    }
+    var x=parseInt(prompt("Nhập số nguyên cần tìm: "));
+    var dem=0;
+    for(var j=0;j<soNguyen.length;j++)
+    {
+        if(x===soNguyen[j])
+            dem++;
+    }
+    if (dem===1)
+        alert(x+" is in the array");
+    else
+        alert(x+" is not in the array");
+</script>
+</body>
+</html>

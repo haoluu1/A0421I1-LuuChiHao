@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    var soNguyen=[n];
+    var n=prompt("Nhập số phần tử mảng: ");
+    var dem=0;
+    for(i=0;i<n;i++)
+    {
+        soNguyen[i]=parseInt(prompt("Nhập số nguyên: "));
+        if(soNguyen[i]<0)
+            dem++;
+    }
+    document.write("có "+dem+" số nguyên âm");
+</script>
+</body>
+</html>
