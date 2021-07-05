@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    var mang1=["Polaris","Aldebaran","Deneb","Vega","Altair","Dubhe","Regulus"];
+    var mang2=["Ursa Minor","Tarurus","Cygnus","Lyra","Aquila","Ursa Major","Leo"];
+    var mangx=prompt("Nhập từ cần tìm: ");
+    var x = timMang(mangx, mang1, mang2);
+    function timMang()
+    {
+        for (i = 0; i < mang1.length; i++)
+        {
+            if (mang1[i] === mangx)
+                return mang2[i];
+        }
+    }
+    document.write(x);
+</script>
+</body>
+</html>

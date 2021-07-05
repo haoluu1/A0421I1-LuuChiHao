@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    var chuoi1=prompt("Nhập chuỗi 1: ");
+    var chuoi2=prompt("Nhập chuỗi 2: ");
+    var chuoiTam=new Array();
+    for(i=0;i<chuoi1.length;i++)
+    {
+        var tam=0;
+        for(j=0;j<chuoi2.length;j++)
+        {
+            if(chuoi1[i]==chuoi2[j])
+            {
+                tam++;
+            }
+        }
+        if(tam!=0)
+        {
+            chuoiTam.push(chuoi1[i]);
+        }
+    }
+    document.write("Có "+chuoiTam.length+" kí tự giống nhau là: "+chuoiTam);
+</script>
+</body>
+</html>

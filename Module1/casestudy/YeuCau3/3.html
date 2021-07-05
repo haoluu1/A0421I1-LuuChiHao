@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    var x=prompt("Số phân số cần so sánh: ");
+    var tuSo=new Array();
+    var mauSo=new Array();
+    for(i=0;i<x;i++)
+    {
+        tuSo[i]=prompt("Tử số phân số thứ "+(i+1));
+        mauSo[i]=prompt("Mẫu số phân số thứ "+(i+1));
+    }
+    var phanSo=new Array();
+    for(i=0;i<x;i++)
+    {
+        phanSo[i]=tuSo[i]/mauSo[i];
+    }
+    var max=phanSo[0];
+    var chiSo,maxTuSo,maxMauSo;
+    for(i=0;i<x;i++)
+    {
+        if(max<phanSo[i])
+        {
+            max=phanSo[i];
+            chiSo=i;
+            maxTuSo=tuSo[i];
+            maxMauSo=mauSo[i];
+        }
+    }
+    document.write("Phân số lớn nhất là: "+maxTuSo+"/"+maxMauSo+", có chỉ số là: "+chiSo);
+</script>
+</body>
+</html>

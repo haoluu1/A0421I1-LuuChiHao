@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    var luong=parseFloat(prompt("Nhập lương: "));
+    var thue=parseFloat();
+    if(luong<7000000)
+    {
+        thue=luong*20/100;
+        luong=luong-thue;
+        document.write("Thuế thu nhập: "+thue);
+        document.write("</br>");
+        document.write("Lương ròng: "+luong);
+    }
+    else if(luong<15000000)
+    {
+        thue=luong*20/100;
+        luong=luong-thue;
+        document.write("Thuế thu nhập: "+thue);
+        document.write("</br>");
+        document.write("Lương ròng: "+luong);
+    }
+    else
+    {
+        thue=luong*20/100;
+        luong=luong-thue;
+        document.write("Thuế thu nhập: "+thue);
+        document.write("</br>");
+        document.write("Lương ròng: "+luong);
+    }
+</script>
+</body>
+</html>

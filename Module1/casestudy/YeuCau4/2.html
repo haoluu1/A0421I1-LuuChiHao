@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    var chuoi=prompt("Nhập chuỗi: ");
+    var chuoiTam=new Array();
+    for(i=0;i<chuoi.length;i++)
+    {
+        var tam=0;
+        for(j=0;j<chuoiTam.length;j++)
+        {
+            if(chuoi[i]==chuoiTam[j])
+            {
+                tam++;
+            }
+        }
+        if(tam==0)
+        {
+            chuoiTam.push(chuoi[i]);
+        }
+    }
+    document.write("Có "+chuoiTam.length+" kí tự khác nhau");
+</script>
+</body>
+</html>

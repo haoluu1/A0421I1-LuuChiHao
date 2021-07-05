@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    class veSo
+    {
+        constructor(so1,so2,so3,so4,so5,so6)
+        {
+            this.so1=so1;
+            this.so2=so2;
+            this.so3=so3;
+            this.so4=so4;
+            this.so5=so5;
+            this.so6=so6;
+        }
+    }
+    var mangVeSo=new Array();
+    var x=prompt("Mua vé số: \n 1. Tự chọn \n 2. Ngẫu nhiên");
+    if(x==1)
+        muaVeSo1();
+    else if(x==2)
+        muaVeSo2();
+    function muaVeSo1()
+    {
+        let n="Số 1: <input id='so1'>";
+            n+="Số 2: <input id='so2'>";
+            n+="Số 3: <input id='so3'>";
+            n+="Số 4: <input id='so4'>";
+            n+="Số 5: <input id='so5'>";
+            n+="Số 6: <input id='so6'>";
+            n+="<button onclick='HoanThanhMua()'>Xác nhận</button>";
+        document.write(n);
+    }
+    function HoanThanhMua()
+    {
+        var so1=parseInt(document.getElementById('so1').value);
+        var so2=parseInt(document.getElementById('so2').value);
+        var so3=parseInt(document.getElementById('so3').value);
+        var so4=parseInt(document.getElementById('so4').value);
+        var so5=parseInt(document.getElementById('so5').value);
+        var so6=parseInt(document.getElementById('so6').value);
+        mangVeSo.push(new veSo(so1,so2,so3,so4,so5,so6));
+        hienThi();
+    }
+    function muaVeSo2()
+    {
+        var veSoNgauNhien=new Array();
+        for(i=0;i<6;i++)
+        {
+            veSoNgauNhien[i]=Math.floor(Math.random()*99);
+        }
+        mangVeSo.push(new veSo(veSoNgauNhien[0],veSoNgauNhien[1],veSoNgauNhien[2],veSoNgauNhien[3],veSoNgauNhien[4],veSoNgauNhien[5]));
+        hienThi();
+    }
+    function hienThi()
+    {
+        document.body.innerHTML;
+        let n="<table border='1'>";
+        for(let i =0; i<mangVeSo.length;i++)
+        {
+            n+="<tr>";
+            n+="<td>"+mangVeSo[i].so1+"</td>";
+            n+="<td>"+mangVeSo[i].so2+"</td>";
+            n+="<td>"+mangVeSo[i].so3+"</td>";
+            n+="<td>"+mangVeSo[i].so4+"</td>";
+            n+="<td>"+mangVeSo[i].so5+"</td>";
+            n+="<td>"+mangVeSo[i].so6+"</td>";
+            n+="</tr>";
+        }
+        n+="</table>";
+        n+="<button type='button' onclick='KiemTra()'>Xổ số</button>";
+        document.write(n);
+    }
+    function KiemTra()
+    {
+        var soTrung=new Array();
+        for(i=0;i<6;i++)
+        {
+            soTrung[i]=Math.floor(Math.random()*99);
+        }
+        var veTrungThuong=new veSo(soTrung[0],soTrung[1],soTrung[2],soTrung[3],soTrung[4],soTrung[5]);
+        document.write("Dãy số trúng thưởng là: "+veTrungThuong.so1+" "+veTrungThuong.so2+" "+veTrungThuong.so3+" "+veTrungThuong.so4+" "+veTrungThuong.so5+" "+veTrungThuong.so6);
+        for(i=0;i<mangVeSo.length;i++)
+        {
+            if(veTrungThuong.so1==mangVeSo[i].so1&&veTrungThuong.so2==mangVeSo[i].so2&&veTrungThuong.so3==mangVeSo[i].so3&&veTrungThuong.so4==mangVeSo[i].so4&&veTrungThuong.so5==mangVeSo[i].so5&&veTrungThuong.so6==mangVeSo[i].so6)
+            {
+                alert("Trúng giải nhất");
+            }
+            else if(veTrungThuong.so2==mangVeSo[i].so2&&veTrungThuong.so3==mangVeSo[i].so3&&veTrungThuong.so4==mangVeSo[i].so4&&veTrungThuong.so5==mangVeSo[i].so5&&veTrungThuong.so6==mangVeSo[i].so6)
+            {
+                alert("Trúng giải nhì");
+            }
+            else if(veTrungThuong.so4==mangVeSo[i].so4&&veTrungThuong.so5==mangVeSo[i].so5&&veTrungThuong.so6==mangVeSo[i].so6)
+            {
+                alert("Trúng giải ba");
+            }
+            else
+            {
+                alert("Chúc bạn may mắn lần sau");
+            }
+        }
+    }
+</script>
+</body>
+</html>

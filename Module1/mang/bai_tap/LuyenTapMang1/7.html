@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    var soNguyen=new Array();
+    var i=0;
+    do
+    {
+        soNguyen[i]=parseInt(prompt("Nhập số nguyên: "));
+        i++;
+    }
+    while (i<10);
+    var x=parseInt(prompt("Nhập số nguyên cần xóa: "));
+    for(var j=0;j<soNguyen.length;j++)
+    {
+        if(x===soNguyen[j])
+        {
+            for(var k=j;k<soNguyen.length;k++)
+            {
+                soNguyen[k]=soNguyen[k+1];
+            }
+        }
+    }
+    soNguyen.pop();
+    document.write(soNguyen);
+</script>
+</body>
+</html>

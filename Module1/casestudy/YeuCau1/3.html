@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    var x=prompt("Nhập chiều cao: ");
+    for(i=1;i<=x;i++)
+    {
+        for(j=x;j>i;j--)
+        {
+            document.write("&ensp;");
+        }
+        for(j=1;j<=i;j++)
+        {
+            document.write("*");
+        }
+        for(j=2;j<=i;j++)
+        {
+            document.write("*");
+        }
+        document.write("</br>");
+    }
+</script>
+</body>
+</html>

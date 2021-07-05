@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    var n = parseInt(prompt("Nhập n: "));
+    var m = parseInt(prompt("Nhập m: "));
+    var mang = new Array(n);
+    for (i = 0; i < mang.length; i++)
+    {
+        mang[i] = new Array(m);
+        for (j = 0; j < mang[i].length; j++)
+        {
+            mang[i][j] = parseInt(prompt("Nhập phần tử ["+i+"] ["+j+"]:"));
+        }
+    }
+    for (i = 0; i < mang.length; i++)
+    {
+        for (j = 0; j < mang[i].length; j++)
+        {
+            document.write(mang[i][j]+"&ensp;");
+        }
+        document.write("<br/>");
+    }
+    function tongSoChan()
+    {
+        var s=0;
+        for (i = 0; i < mang.length; i++)
+        {
+            for (j = 0; j < mang[i].length; j++)
+            {
+                if(mang[i][j]%2==0)
+                {
+                    s=s+mang[i][j];
+                }
+            }
+        }
+        return s;
+    }
+    document.write("Tổng các số chẵn là: "+tongSoChan(mang));
+    document.write("</br>");
+    function lietKeSoNguyenTo()
+    {
+        var snt = new Array();
+        for (i = 0; i < mang.length; i++)
+        {
+            for (j = 0; j < mang[i].length; j++)
+            {
+                let dem=0;
+                for(k=1;k<=mang[i][j];k++)
+                {
+                    if(mang[i][j]%k==0)
+                        dem++;
+                }
+                if(dem==2)
+                    snt.push(mang[i][j]);
+            }
+        }
+        return snt;
+    }
+    document.write("Các số nguyên tố: "+lietKeSoNguyenTo(mang));
+    document.write("</br>");
+    function timLonNho()
+    {
+        var max=mang[0][0];
+        var min=mang[0][0];
+        var maxMin=new Array();
+        for (i = 0; i < mang.length; i++)
+        {
+            for (j = 0; j < mang[i].length; j++)
+            {
+                if(max<mang[i][j])
+                {
+                    max=mang[i][j];
+                }
+                if(min>mang[i][j])
+                {
+                    min=mang[i][j];
+                }
+            }
+        }
+        maxMin.push(max);
+        maxMin.push(min);
+        return maxMin;
+    }
+    document.write("Số lớn nhất, nhỏ nhất lần lượt là: "+timLonNho(mang));
+</script>
+</body>
+</html>

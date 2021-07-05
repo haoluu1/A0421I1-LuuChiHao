@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<button onclick="feet_meters()">Feed->Meters</button>
+<button onclick="meters_feet()">Meters->Feed</button>
+<script>
+    function feet_meters()
+    {
+        var feet=prompt("Nhập feet: ");
+        var meters=0.305*feet;
+        document.write(feet+" feet = "+meters+" meters");
+    }
+    function meters_feet()
+    {
+        var meters=prompt("Nhập feet: ");
+        var feet=3.279*meters;
+        document.write(meters+" meters = "+feet+" feet");
+    }
+</script>
+</body>
+</html>

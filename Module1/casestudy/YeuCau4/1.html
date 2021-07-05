@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    var x=prompt("Nhập chuỗi: ");
+    x.replace().trim();
+    chuanHoaXau(x);
+    function chuanHoaXau()
+    {
+        x=x.toLowerCase();
+        document.write(x[0].toUpperCase());
+        for(i=1;i<x.length;i++)
+        {
+            if(x.charAt(i-1)==" ")
+            {
+                document.write(x[i].toUpperCase());
+            }
+            else
+                document.write(x[i]);
+        }
+    }
+</script>
+</body>
+</html>

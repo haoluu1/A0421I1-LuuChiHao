@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    var tong=0;
+    do
+    {
+        var chon=parseInt(prompt("Menu\n" +
+            "1.Cafe\n" +
+            "2.Cam vắt\n" +
+            "3.Nước ép cà rốt\n" +
+            "4.Nước ép cà chua\n" +
+            "5.Nước lọc\n" +
+            "6.Nước dừa\n" +
+            "7.Thoát"));
+        let soLuong=0;
+        let donGia=0;
+        switch (chon)
+        {
+            case 1:
+                donGia=1000;
+                break;
+            case 2:
+                donGia=2000;
+                break;
+            case 3:
+                donGia=3000;
+                break;
+            case 4:
+                donGia=4000;
+                break;
+            case 5:
+                donGia=5000;
+                break;
+            case 6:
+                donGia=6000;
+                break;
+            case 7:
+                continue;
+        }
+        soLuong=parseInt(prompt("Nhập số lượng: "));
+        tong+=soLuong*donGia;
+    }
+    while (chon!=7);
+    document.write(tong);
+</script>
+</body>
+</html>

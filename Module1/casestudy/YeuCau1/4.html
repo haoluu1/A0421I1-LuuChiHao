@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    var x=prompt("Nhập chiều cao: ");
+    for(i=1;i<=x-1;i++)
+    {
+        for(j=x;j>i;j--)
+        {
+            document.write("&ensp;");
+        }
+        for(j=1;j<=i;j++)
+        {
+            document.write("*");
+            for(j=2;j<=i;j++)
+            {
+                document.write("&ensp;");
+            }
+        }
+        for(j=2;j<=i;j++)
+        {
+            for(j=3;j<=i;j++)
+            {
+                document.write("&ensp;");
+            }
+            document.write("*");
+        }
+        document.write("</br>");
+    }
+    for(i=1;i<x*2;i++)
+    {
+        document.write("*");
+    }
+</script>
+</body>
+</html>

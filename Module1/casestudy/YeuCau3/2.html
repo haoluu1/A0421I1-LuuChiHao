@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    var A=[7,2,5,3,5,3];
+    var a=prompt("Nhập số phần tử mảng A: ");
+    for(i=0;i<a;i++)
+    {
+        A[i]=parseInt(prompt("Nhập phần tử A["+i+"]: "));
+    }
+    var B=new Array();
+    var b=prompt("Nhập số phần tử mảng B: ");
+    for(i=0;i<b;i++)
+    {
+        B[i]=parseInt(prompt("Nhập phần tử B["+i+"]: "));
+    }
+    var arr=new Array();
+    for(i=0;i<B.length;i++)
+    {
+        var temp=0;
+        for(j=0;j<A.length;j++)
+        {
+            if(B[i]==A[j])
+            {
+                temp++;
+            }
+        }
+        if(temp==0)
+        {
+            arr.push(B[i]);
+        }
+    }
+    document.write(arr);
+</script>
+</body>
+</html>
