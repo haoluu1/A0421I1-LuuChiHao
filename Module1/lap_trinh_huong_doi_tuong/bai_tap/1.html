@@ -6,7 +6,24 @@
 </head>
 <body>
 <script>
-
+    class hinhChuNhat
+    {
+        constructor(chieuDai,chieuRong,dienTich,chuVi)
+        {
+            this.chieuDai=chieuDai;
+            this.chieuRong=chieuRong;
+            this.dienTich=chieuDai*chieuRong;
+            this.chuVi=(chieuDai+chieuRong)*2;
+        }
+    }
+    var chieuDai=parseInt(prompt("Nhập chiều dài: "));
+    var chieuRong=parseInt(prompt("Nhập chiều rộng: "));
+    hcn=new hinhChuNhat(chieuDai,chieuRong);
+    document.write("Hình chữ nhật có:<br>" +
+        "chiều dài: "+hcn.chieuDai+"<br>" +
+        "chiều rộng: "+hcn.chieuRong+"<br>" +
+        "diện tích: "+hcn.dienTich+"<br>" +
+        "chu vi: "+hcn.chuVi);
 </script>
 </body>
 </html>

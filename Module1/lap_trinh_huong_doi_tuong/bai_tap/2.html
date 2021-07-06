@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    class nhietDo
+    {
+        constructor(doC,doF,doK)
+        {
+            this.doC=doC;
+            this.doF=doC*1.8+32;
+            this.doK=doC+273.15;
+        }
+    }
+    var doC=parseFloat(prompt("Nhập nhiệt độ: ... độ C"));
+    nd=new nhietDo(doC);
+    document.write(nd.doC+" độ C = "+nd.doF+" độ F = "+nd.doK+" độ K");
+</script>
+</body>
+</html>
