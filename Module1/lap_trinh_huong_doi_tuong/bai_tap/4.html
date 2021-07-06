@@ -5,45 +5,49 @@
     <title>Title</title>
 </head>
 <body>
-<img src="" id="bong_den">
-<button onclick="switchButton()">Button</button>
+<button onclick="anAdam()">Adam</button>
+<button onclick="anEva()">Eva</button>
+<h1 id="adam"></h1>
+<h1 id="eva"></h1>
 <script>
-    class ElectricLamp {
-        constructor() {
-            document.getElementById("bong_den").src = "Images/2.jpg";
-        }
-        turnOn() {
-            document.getElementById("bong_den").src = "Images/1.jpg";
-        }
-        turnOf() {
-            document.getElementById("bong_den").src = "Images/2.jpg";
+    class tao
+    {
+        constructor(khoiLuong)
+        {
+            this.khoiLuong=khoiLuong;
         }
     }
-    class SwitchButton {
-        constructor(status, lamp) {
-            this.status = status;
-            this.lamp = lamp;
-        }
-        connectToLamp(lamp) {
-            this.lamp = lamp;
-        }
-        turnOnSwitchButton() {
-            this.lamp.turnOn();
-            this.status = true;
-        }
-        turnOfSwitchButton() {
-            this.lamp.turnOf();
-            this.status = false;
+    n=new tao(8);
+    class nguoi
+    {
+        constructor(ten,khoiLuong)
+        {
+            this.ten=ten;
+            this.khoiLuong=khoiLuong;
         }
     }
-    let lamp = new ElectricLamp();
-    let switchButton1 = new SwitchButton(false, lamp);
-    function switchButton() {
-        if (switchButton1.status) {
-            switchButton1.turnOfSwitchButton();
-        } else {
-            switchButton1.turnOnSwitchButton();
+    adam=new nguoi("Adam",0);
+    eva=new nguoi("Eva",0);
+    function anAdam()
+    {
+        if(n.khoiLuong>0)
+        {
+            document.getElementById("adam").innerHTML=(++adam.khoiLuong);
+            n.khoiLuong= n.khoiLuong - 1;
         }
+        else
+            alert("hết táo");
+    }
+    function anEva()
+    {
+
+        if(n.khoiLuong>0)
+        {
+            document.getElementById("eva").innerHTML=(++eva.khoiLuong);
+            n.khoiLuong= n.khoiLuong - 1;
+        }
+        else
+            alert("hết táo");
     }
 </script>
 </body>
