@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<img id="channel" src="">
+<p id="volume"></p>
+<button onclick="changeChannel()">Change</button>
+<button onclick="changeVolume(true)">Up volume</button>
+<button onclick="changeVolume(false)">Down volume</button>
+<script>
+    class Television {
+        constructor(channel, volume, status) {
+            this.channel = channel;
+            this.volume = volume;
+            this.status = status;
+        }
+
+        changeChannel(channel) {
+            if (this.status) {
+                this.channel = channel;
+                this.displayChannel();
+            } else {
+                alert("Tivi đang tắt")
+            }
+
+        }
+
+        changeVolume(check) {
+            if (this.status) {
+                if (check) {
+                    this.volume++;
+                } else {
+                    this.volume--;
+                }
+                this.displayVolume();
+            } else {
+                alert("Tivi đang tắt")
+            }
+        }
+
+        turnOnOrTurnOff() {
+            this.status = !this.status;
+        }
+
+        displayChannel() {
+            document.getElementById("channel").src = this.channel;
+        }
+        displayVolume() {
+            document.getElementById("volume").innerText = this.volume;
+        }
+    }
+
+    class Remote {
+        constructor(code) {
+            this.code = code;
+        }
+
+        changeChannel(television, channel) {
+            television.changeChannel(channel);
+        }
+
+        changeVolume(television, check) {
+            television.changeVolume(check);
+        }
+
+        turnOnOrTurnOff(television) {
+            television.turnOnOrTurnOff();
+        }
+    }
+    let television = new Television("Images/Hinh 1b.png", 50, false);
+    let remote = new Remote("tivi01");
+    function main() {
+        remote.turnOnOrTurnOff(television);
+        television.displayChannel();
+        remote.changeVolume(television, true);
+        remote.changeVolume(television, true);
+        console.log(television)
+    }
+    function changeChannel() {
+        remote.changeChannel(television,"Images/Hinh 1a.png");
+    }
+    function changeVolume(check) {
+        remote.changeVolume(television, check);
+    }
+
+    main();
+</script>
+</body>
+</html>

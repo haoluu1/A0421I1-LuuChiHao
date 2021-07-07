@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<button onclick="taoChuot()">Tạo chuột</button>
+<button onclick="taoMeo()">Tạo mèo</button>
+<button onclick="bat()">Bắt chuột</button>
+<p id="chuot"></p>
+<p id="meo"></p>
+<script>
+    class chuot
+    {
+        constructor(khoiLuong,theLuc)
+        {
+            this.khoiLuong=khoiLuong;
+            this.theLuc=theLuc;
+        }
+    }
+    class meo
+    {
+        constructor(khoiLuong,theLuc)
+        {
+            this.khoiLuong=khoiLuong;
+            this.theLuc=theLuc;
+        }
+    }
+    function taoChuot()
+    {
+        c=new chuot(10,Math.floor(Math.random()*10));
+        document.getElementById("chuot").innerText=("chuột có khối lượng: "+c.khoiLuong+" tốc độ: "+c.theLuc);
+    }
+    function taoMeo()
+    {
+        m=new meo(20,Math.floor(Math.random()*20));
+        document.getElementById("meo").innerText=("mèo có khối lượng: "+m.khoiLuong+" tốc độ: "+m.theLuc);
+    }
+    function bat()
+    {
+        if(c.theLuc>=m.theLuc)
+            document.write("mèo không bắt được chuột");
+        else
+        {
+            var tongKL=c.khoiLuong+m.khoiLuong;
+            var tongTL=m.theLuc-1;
+            document.write("mèo bắt được chuột và có khối lượng: "+tongKL+" thể lực: "+tongTL);
+        }
+    }
+</script>
+</body>
+</html>
