@@ -3,22 +3,22 @@ create database QuanLyFurama;
 use QuanLyFurama;
 
 create table `Position`(
-PositionID int auto_increment primary key,
+PositionID int primary key,
 PositionName varchar(45)
 );
 
 create table Literacy(
-LiteracyID int auto_increment primary key,
+LiteracyID int primary key,
 LteracyName varchar(45)
 );
 
 create table Department(
-DepartmentID int auto_increment primary key,
+DepartmentID int primary key,
 DepartmentName varchar(45)
 );
 
 create table Employee(
-EmployeeID int auto_increment primary key,
+EmployeeID int primary key,
 EmployeeName varchar(45),
 EmployeeDateOfBirth date,
 EmployeeIDNumber varchar(45),
@@ -35,12 +35,12 @@ foreign key(DepartmentID) references Department(DepartmentID)
 );
 
 create table CustomerType(
-CustomerTypeID int auto_increment primary key,
+CustomerTypeID int primary key,
 CustomerTypeName varchar(45)
 );
 
 create table Customer(
-CustomerID int auto_increment primary key,
+CustomerID int primary key,
 CustomerTypeID int,
 foreign key(CustomerTypeID) references CustomerType(CustomerTypeID),
 CustomerName varchar(45),
@@ -53,17 +53,17 @@ CustomerAddress varchar(45)
 );
 
 create table RentType(
-RentTypeID int auto_increment primary key,
+RentTypeID int primary key,
 RentTypeName varchar(45)
 );
 
 create table ServiceType(
-ServiceTypeID int auto_increment primary key,
+ServiceTypeID int primary key,
 ServiceTypeName varchar(45)
 );
 
 create table Service(
-ServiceID int auto_increment primary key,
+ServiceID int primary key,
 ServiceName varchar(45),
 Area int,
 CostRent double,
@@ -79,7 +79,7 @@ Floor int
 );
 
 create table Contract(
-ContractID int auto_increment primary key,
+ContractID int primary key,
 ContractStartDate datetime,
 ContractEndDate datetime,
 Deposit double,
@@ -92,7 +92,7 @@ foreign key(ServiceID) references Service(ServiceID)
 );
 
 create table AccompaniedService(
-AccompaniedServiceID int auto_increment primary key,
+AccompaniedServiceID int primary key,
 AccompaniedServiceName varchar(45),
 Price double,
 Unit varchar(10),
@@ -100,10 +100,10 @@ Unit varchar(10),
 );
 
 create table ContractDetail(
-ContractDetailID int auto_increment primary key,
+ContractDetailID int primary key,
 ContractID int,
 foreign key(ContractID) references Contract(ContractID),
-ServiceID int,
-foreign key(ServiceID) references Service(ServiceID),
+AccompaniedServiceID int,
+foreign key(AccompaniedServiceID) references AccompaniedService(AccompaniedServiceID),
 Quantily int
 );
