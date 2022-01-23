@@ -21,8 +21,8 @@
   <div class="row" style="border: 1px solid black;padding: 5px 0 5px 0;">
     <div class="col-1"></div>
     <div class="col-1">home</div>
-    <div class="col-1">employee</div>
-    <div class="col-1">customer</div>
+    <div class="col-1"><a href="/control?action=employee">employee</a></div>
+    <div class="col-1"><a href="/control?action=customer">customer</a></div>
     <div class="col-1">service</div>
     <div class="col-1">contract</div>
     <div class="col-1"></div>
