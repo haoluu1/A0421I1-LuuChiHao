@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<form th:action="@{/save}" method="post" th:object="${declaration}">
+    <table>
+        <caption><h3>Tờ Khai Y Tế</h3></caption>
+        <tr hidden>
+            <td colspan="3"><input type="number" th:field="*{id}"></td>
+        </tr>
+        <tr>
+            <td colspan="3"><span>Họ tên</span></td>
+        </tr>
+        <tr>
+            <td colspan="3"><input type="text" th:field="*{name}"> <br></td>
+        </tr>
+        <tr>
+            <td><span>Năm sinh</span></td>
+            <td><span>Giới tính</span></td>
+            <td>Quốc Tịch</td>
+        </tr>
+        <tr>
+            <td><input type="number" value="1990" th:field="*{dateOfYear}"></td>
+            <td><select th:field="*{gender}">
+                <option value=true>Male</option>
+                <option value=false>Female</option>
+            </select></td>
+            <td><select th:field="*{country}">
+                <option value="Việt Nam">Việt Nam</option>
+                <option value="Khác">Khác</option>
+            </select></td>
+        </tr>
+        <tr>
+            <td colspan="3"><span>Số hộ chiếu hoặc CMND hoặc giấy thông hành hợp pháp</span></td>
+        </tr>
+        <tr>
+            <td colspan="3"><input type="text" th:field="*{identifyNumber}"></td>
+        </tr>
+        <tr><td colspan="3">Thông tin đi lại</td></tr>
+        <tr>
+            <td colspan="3"><input type="radio" name="transportation" th:field="*{transportation}" value="Tàu bay">Tàu bay
+                <input type="radio" name="transportation" th:field="*{transportation}" value="Tàu thuyền">Tàu Thuyền
+                <input type="radio" name="transportation" th:field="*{transportation}" value="Ô tô">Ô tô
+                <input type="radio" name="transportation" > Khác
+
+            </td>
+        </tr>
+        <tr>
+            <td>Số hiệu phương tiện</td>
+            <td>Số ghế</td>
+        </tr>
+        <tr>
+            <td><input type="text" th:field="*{licensePlate}"></td>
+            <td><input type="number" th:field="*{seatNumber}"></td>
+        </tr>
+        <tr>
+            <td>Ngày khởi hành</td>
+            <td>Ngày kết thúc</td>
+        </tr>
+        <tr>
+            <td>
+                <input type="number"  value="02" th:field="*{departStartDay}">
+                <input type="number" value="08" th:field="*{departStartMonth}">
+                <input type="number"  value="2021" th:field="*{departStartYear}">
+            </td>
+            <td>
+                <input type="number"  value="02" th:field="*{departEndDay}">
+                <input type="number"  value="08" th:field="*{departEndMonth}">
+                <input type="number"  value="2021" th:field="*{departEndYear}">
+            </td>
+        </tr>
+        <tr>
+            <td colspan="3">Trong 14 ngày qua, anh/chị có đến tỉnh/thành phố nào</td>
+        </tr>
+        <tr>
+            <td><textarea th:field="*{cityArrived}"></textarea></td>
+        </tr>
+    </table>
+    <input type="submit">
+</form>
+</body>
+</html>
