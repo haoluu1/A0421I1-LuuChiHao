@@ -47,7 +47,6 @@ public class UserController {
             User user = new User();
             BeanUtils.copyProperties(userDto, user);
             userService.save(user);
-            redirectAttributes.addFlashAttribute("message", "Create User: " + user.getFirstName() + "OK!");
             return "redirect:/user";
         }
     }

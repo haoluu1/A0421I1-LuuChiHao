@@ -3,11 +3,10 @@ package com.example.demo.codegym.dto;
 import org.springframework.validation.Errors;
 import org.springframework.validation.Validator;
 
-import javax.validation.constraints.Min;
-import javax.validation.constraints.NotEmpty;
-import javax.validation.constraints.Size;
+import javax.persistence.criteria.CriteriaBuilder;
+import javax.validation.constraints.*;
 
-public class UserDto implements Validator {
+public class UserDto implements Validator{
     private int id;
 
     @NotEmpty
@@ -19,13 +18,15 @@ public class UserDto implements Validator {
     private String lastName;
 
     @NotEmpty
-    private int phoneNumber;
+    @Pattern(regexp = "^(0[3|5|7|8|9])+([0-9]{8})$")
+    private String phoneNumber;
 
     @NotEmpty
     @Min(18)
-    private int age;
+    private String age;
 
     @NotEmpty
+    @Email
     private String email;
 
     public UserDto() {
@@ -55,19 +56,19 @@ public class UserDto implements Validator {
         this.lastName = lastName;
     }
 
-    public int getPhoneNumber() {
+    public String getPhoneNumber() {
         return phoneNumber;
     }
 
-    public void setPhoneNumber(int phoneNumber) {
+    public void setPhoneNumber(String phoneNumber) {
         this.phoneNumber = phoneNumber;
     }
 
-    public int getAge() {
+    public String getAge() {
         return age;
     }
 
-    public void setAge(int age) {
+    public void setAge(String age) {
         this.age = age;
     }
 
@@ -87,8 +88,8 @@ public class UserDto implements Validator {
     @Override
     public void validate(Object target, Errors errors) {
         UserDto userDto = (UserDto)target;
-        if ("".equals(userDto.getFirstName())){
-            errors.rejectValue("firstName", "errorFirstName");
-        }
+//        if ("".equals(userDto.getFirstName())){
+//            errors.rejectValue("firstName", "errorFirstName");
+//        }
     }
 }
