@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form method="post" action="/delete">
+    <div>
+        <label>ID</label>
+        <input name="id" type="text" th:value="${blog.id}">
+    </div>
+    <div>
+        <label>Title</label>
+        <input name="title" type="text" th:value="${blog.title}">
+    </div>
+    <div>
+        <label>Content</label>
+        <input name="content" type="text" th:value="${blog.content}">
+    </div>
+    <div>
+        <label>Author</label>
+        <input name="author" type="text" th:value="${blog.author}">
+    </div>
+    <div>
+        <label>Release Date</label>
+        <input name="releaseDate" type="text" th:value="${blog.releaseDate}">
+    </div>
+    <div>
+        <label>Category</label>
+        <select name="category">
+            <option th:text="${blog.category.name}" th:value="${blog.category.getId()}"></option>
+            <th:block th:each="item : ${categoryList}">
+                <option th:text="${item.name}" th:value="${item.id}"></option>
+            </th:block>
+        </select>
+    </div>
+    <button type="submit">Delete</button>
+</form>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form method="get" action="/">
+    <div>
+        <label>Author</label>
+        <input name="key_author" type="text">
+    </div>
+    <div>
+        <label>Category</label>
+        <select name="key_category">
+            <option value="" selected>Choose</option>
+            <th:block th:each="item : ${categoryList}">
+                <option th:text="${item.name}" th:value="${item.id}"></option>
+            </th:block>
+        </select>
+    </div>
+    <button type="submit">Search</button>
+</form>
+<table>
+    <tr>
+        <td>ID</td>
+        <td>Title</td>
+        <td>Content</td>
+        <td>Author</td>
+        <td>Category</td>
+        <td>Release Date</td>
+    </tr>
+    <tr th:each="item : ${blogs}">
+        <td th:text="${item.id}"></td>
+        <td th:text="${item.title}"></td>
+        <td th:text="${item.content}"></td>
+        <td th:text="${item.author}"></td>
+        <td th:text="${item.category.name}"></td>
+        <td th:text="${item.releaseDate}"></td>
+        <td>
+            <a th:href="@{/{id}/update(id=${blog.getId()})">Edit</a>
+        </td>
+        <td>
+            <a th:href="@{/{id}/delete(id=${blog.getId()})">Delete</a>
+        </td>
+        <td>
+            <a th:href="@{/{id}/view(id=${blog.getId()})">View</a>
+        </td>
+    </tr>
+</table>
+<a th:href="@{'/'(page=${blogs.number - 1},key_author=${key_author},key_category=${key_category})}" th:if="${blogs.hasPrevious()}">Previous</a>
+<span th:text="${blogs.number + 1}"></span>/<span th:text="${blogs.totalPages}"></span>
+<a th:href="@{'/'(page=${blogs.number + 1},key_author=${key_author},key_category=${key_category})}" th:if="${blogs.hasNext()}">Next</a>
+</body>
+</html>
