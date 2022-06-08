@@ -56,12 +56,11 @@ public class CustomerController {
 
     @GetMapping("/create")
     public String showCreate(Model model){
-        Employee employee = new Employee();
-        employee.setPosition(new Position());
-        employee.setEducationDegree(new EducationDegree());
-        employee.setDivision(new Division());
-        model.addAttribute("employee", employee);
-        return "/employeeHTML/create";
+        Customer customer = new Customer();
+        customer.setCustomerType(new CustomerType());
+        customer.setGender(new Gender());
+        model.addAttribute("customer", customer);
+        return "/customerHTML/create";
     }
 
     @PostMapping("/create")
