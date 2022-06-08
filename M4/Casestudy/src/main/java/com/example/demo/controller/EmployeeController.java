@@ -59,7 +59,6 @@ public class EmployeeController {
                                  @PageableDefault(size = 2) Pageable pageable,
                                  Model model) {
         Page<Employee> employees = employeeService.getAllEmployee(key_name, key_idCard,key_position, pageable);
-        System.out.println(employees);
         model.addAttribute("employees", employees);
         model.addAttribute("key_name", key_name);
         model.addAttribute("key_idCard", key_idCard);
