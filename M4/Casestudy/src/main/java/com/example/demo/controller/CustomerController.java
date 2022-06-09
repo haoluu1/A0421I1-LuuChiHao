@@ -46,7 +46,7 @@ public class CustomerController {
 
     @GetMapping("/list")
     public String getAllCustomer(@RequestParam(defaultValue = "") String key_name,
-                                 @PageableDefault(size = 2) Pageable pageable,
+                                 @PageableDefault(size = 5) Pageable pageable,
                                  Model model){
         Page<Customer> customers = customerService.getAllCustomer(key_name, pageable);
         model.addAttribute("customers", customers);
@@ -93,7 +93,7 @@ public class CustomerController {
         return "/customerHTML/edit";
     }
 
-    @PostMapping("edit")
+    @PostMapping("/edit")
     public String edit(Customer customer){
         customerService.save(customer);
         return "redirect:/customer/list";

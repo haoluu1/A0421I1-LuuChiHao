@@ -47,7 +47,7 @@ public class ServiceController {
 
     @GetMapping("/list")
     public String getAllCustomer(@RequestParam(defaultValue = "") String key_name,
-                                 @PageableDefault(size = 2) Pageable pageable,
+                                 @PageableDefault(size = 5) Pageable pageable,
                                  Model model){
         Page<Service> services = serviceService.getAllService(key_name, pageable);
         model.addAttribute("services", services);

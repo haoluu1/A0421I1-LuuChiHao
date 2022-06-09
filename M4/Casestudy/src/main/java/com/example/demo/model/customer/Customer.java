@@ -18,7 +18,7 @@ public class Customer {
     private String birthday;
     @ManyToOne(targetEntity = Gender.class)
     private Gender gender;
-    private String id_card;
+    private String idCard;
     private String phone;
     private String email;
     private String address;
@@ -76,12 +76,12 @@ public class Customer {
         this.gender = gender;
     }
 
-    public String getId_card() {
-        return id_card;
+    public String getIdCard() {
+        return idCard;
     }
 
-    public void setId_card(String id_card) {
-        this.id_card = id_card;
+    public void setIdCard(String idCard) {
+        this.idCard = idCard;
     }
 
     public String getPhone() {

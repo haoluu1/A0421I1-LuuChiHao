@@ -56,7 +56,7 @@ public class EmployeeController {
     public String getAllEmployee(@RequestParam(defaultValue = "") String key_name,
                                  @RequestParam(defaultValue = "") String key_idCard,
                                  @RequestParam(defaultValue = "") String key_position,
-                                 @PageableDefault(size = 2) Pageable pageable,
+                                 @PageableDefault(size = 5) Pageable pageable,
                                  Model model) {
         Page<Employee> employees = employeeService.getAllEmployee(key_name, key_idCard,key_position, pageable);
         model.addAttribute("employees", employees);
