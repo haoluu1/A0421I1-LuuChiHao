@@ -59,7 +59,7 @@
             <td>
                 <select name="gender" class="form-control mr-sm-2" th:field="*{gender}">
                     <!--<option value="1" disabled>Choose</option>-->
-                    <option th:each="item : ${genderList}" th:value="${item.getId}" th:text="${item.getName()}" th:selected="${item.getId() == customer.genderList.getId()}"></option>
+                    <option th:each="item : ${genderList}" th:value="${item.getId}" th:text="${item.getName()}" th:selected="${item.getId() == customer.gender.getId()}"></option>
                 </select>
             </td>
             <td>

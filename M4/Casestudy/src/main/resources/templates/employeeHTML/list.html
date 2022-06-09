@@ -54,19 +54,19 @@
 <!--                <input class="form-control mr-sm-2" customerType="search" placeholder="Birthday" aria-label="Search">-->
             </td>
             <td>
-                <input class="form-control mr-sm-2" customerType="search" placeholder="ID Card" aria-label="Search">
+                <input class="form-control mr-sm-2" customerType="search" placeholder="ID Card" aria-label="Search" name="key_idCard">
             </td>
             <td>
-                <input class="form-control mr-sm-2" customerType="search" placeholder="Salary" aria-label="Search">
+<!--                <input class="form-control mr-sm-2" customerType="search" placeholder="Salary" aria-label="Search">-->
             </td>
             <td>
-                <input class="form-control mr-sm-2" customerType="search" placeholder="Phone" aria-label="Search">
+<!--                <input class="form-control mr-sm-2" customerType="search" placeholder="Phone" aria-label="Search">-->
             </td>
             <td>
-                <input class="form-control mr-sm-2" customerType="search" placeholder="Email" aria-label="Search">
+<!--                <input class="form-control mr-sm-2" customerType="search" placeholder="Email" aria-label="Search">-->
             </td>
             <td>
-                <input class="form-control mr-sm-2" customerType="search" placeholder="Address" aria-label="Search">
+<!--                <input class="form-control mr-sm-2" customerType="search" placeholder="Address" aria-label="Search">-->
             </td>
             <td>
                 <select name="key_position" class="form-control mr-sm-2">
@@ -77,10 +77,10 @@
                 </select>
             </td>
             <td>
-                <input class="form-control mr-sm-2" customerType="search" placeholder="Education Degree" aria-label="Search">
+<!--                <input class="form-control mr-sm-2" customerType="search" placeholder="Education Degree" aria-label="Search">-->
             </td>
             <td>
-                <input class="form-control mr-sm-2" customerType="search" placeholder="Division" aria-label="Search">
+<!--                <input class="form-control mr-sm-2" customerType="search" placeholder="Division" aria-label="Search">-->
             </td>
             <td>
                 <button class="btn btn-outline-success my-2 my-sm-0" customerType="submit">Search</button>
@@ -112,5 +112,8 @@
     </tr>
     </tbody>
 </table>
+<a th:href="@{'/employee/list'(page=${employees.number - 1},key_name=${key_name},key_idCard=${key_idCard},key_position=${key_position})}" th:if="${employees.hasPrevious()}">Previous</a>
+<span th:text="${employees.number + 1}"></span>/<span th:text="${employees.totalPages}"></span>
+<a th:href="@{'/employee/list'(page=${employees.number + 1},key_name=${key_name},key_idCard=${key_idCard},key_position=${key_position})}" th:if="${employees.hasNext()}">Next</a>
 </body>
 </html>

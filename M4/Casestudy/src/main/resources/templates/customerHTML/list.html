@@ -46,38 +46,38 @@
         <form class="form-inline my-2 my-lg-0" method="get" action="/customer/list">
             <td></td>
             <td>
-                <select name="key_customerType" class="form-control mr-sm-2">
-                    <option value="" selected>Choose</option>
-                    <th:block th:each="item : ${customerTypeList}">
-                        <option th:text="${item.name}" th:value="${item.id}"></option>
-                    </th:block>
-                </select>
+<!--                <select name="key_customerType" class="form-control mr-sm-2">-->
+<!--                    <option value="" selected>Choose</option>-->
+<!--                    <th:block th:each="item : ${customerTypeList}">-->
+<!--                        <option th:text="${item.name}" th:value="${item.id}"></option>-->
+<!--                    </th:block>-->
+<!--                </select>-->
             </td>
             <td>
                 <input class="form-control mr-sm-2" customerType="search" placeholder="Name" aria-label="Search" name="key_name">
             </td>
             <td>
-                <input class="form-control mr-sm-2" customerType="search" placeholder="Birthday" aria-label="Search">
+<!--                <input class="form-control mr-sm-2" customerType="search" placeholder="Birthday" aria-label="Search">-->
             </td>
             <td>
-                <select name="key_gender" class="form-control mr-sm-2">
-                    <option value="" selected>Choose</option>
-                    <th:block th:each="item : ${genderList}">
-                        <option th:text="${item.name}" th:value="${item.id}"></option>
-                    </th:block>
-                </select>
+<!--                <select name="key_gender" class="form-control mr-sm-2">-->
+<!--                    <option value="" selected>Choose</option>-->
+<!--                    <th:block th:each="item : ${genderList}">-->
+<!--                        <option th:text="${item.name}" th:value="${item.id}"></option>-->
+<!--                    </th:block>-->
+<!--                </select>-->
             </td>
             <td>
-                <input class="form-control mr-sm-2" customerType="search" placeholder="ID Card" aria-label="Search">
+<!--                <input class="form-control mr-sm-2" customerType="search" placeholder="ID Card" aria-label="Search">-->
             </td>
             <td>
-                <input class="form-control mr-sm-2" customerType="search" placeholder="Phone" aria-label="Search">
+<!--                <input class="form-control mr-sm-2" customerType="search" placeholder="Phone" aria-label="Search">-->
             </td>
             <td>
-                <input class="form-control mr-sm-2" customerType="search" placeholder="Email" aria-label="Search">
+<!--                <input class="form-control mr-sm-2" customerType="search" placeholder="Email" aria-label="Search">-->
             </td>
             <td>
-                <input class="form-control mr-sm-2" customerType="search" placeholder="Address" aria-label="Search">
+<!--                <input class="form-control mr-sm-2" customerType="search" placeholder="Address" aria-label="Search">-->
             </td>
             <td>
                 <button class="btn btn-outline-success my-2 my-sm-0" customerType="submit">Search</button>
@@ -96,16 +96,19 @@
         <td th:text="${item.email}"></td>
         <td th:text="${item.address}"></td>
         <td>
-            <a th:href="@{/employee/view/{id}(id=*{id})}">View</a>
+            <a th:href="@{/customer/view/{id}(id=*{id})}">View</a>
         </td>
         <td>
-            <a th:href="@{/employee/delete/{id}(id=*{id})}">Delete</a>
+            <a th:href="@{/customer/delete/{id}(id=*{id})}">Delete</a>
         </td>
         <td>
-            <a th:href="@{/employee/edit/{id}(id=*{id})}">Edit</a>
+            <a th:href="@{/customer/edit/{id}(id=*{id})}">Edit</a>
         </td>
     </tr>
     </tbody>
 </table>
+<a th:href="@{'/customer/list'(page=${customers.number - 1},key_name=${key_name})}" th:if="${customers.hasPrevious()}">Previous</a>
+<span th:text="${customers.number + 1}"></span>/<span th:text="${customers.totalPages}"></span>
+<a th:href="@{'/customer/list'(page=${customers.number + 1},key_name=${key_name})}" th:if="${customers.hasNext()}">Next</a>
 </body>
 </html>
