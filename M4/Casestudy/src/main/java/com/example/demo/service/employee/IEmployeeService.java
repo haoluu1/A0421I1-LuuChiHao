@@ -8,6 +8,7 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 
 import javax.persistence.ManyToOne;
+import java.util.List;
 
 public interface IEmployeeService {
     Page<Employee> getAllEmployee(String name,
@@ -26,4 +27,6 @@ public interface IEmployeeService {
     Employee findById(int id);
 
     void delete(int id);
+
+    List<Employee> findAll();
 }

@@ -13,7 +13,7 @@ public class AttachService {
     private double cost;
     private int unit;
     private String status;
-    @OneToMany(mappedBy = "contract")
+    @OneToMany(mappedBy = "attachService")
     List<Detail> details;
 
     public AttachService() {
