@@ -43,7 +43,23 @@ export class ProductService {
     this.products.push(product);
   }
 
-  findById(number: number) {
+  findById(id: number){
+    return this.products.find(product => product.id = id);
+  }
 
+  editProduct(id: number, product: Product){
+    // console.log(id);
+    for (let i=0; i<this.products.length; i++){
+      if (this.products[i].id == id) {
+        this.products[i] = product;
+        console.log(this.products[i]);
+      }
+    }
+  }
+
+  deleteProduct(id: number){
+    this.products = this.products.filter(product =>{
+      return product.id !== id;
+    })
   }
 }
