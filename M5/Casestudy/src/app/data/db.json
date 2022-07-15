@@ -1,0 +1,40 @@
+{
+  "customer": [
+    {
+      "id": 3,
+      "name": "c",
+      "email": "c@gmail.com",
+      "dateOfBirth": "2000-03-11",
+      "gender": "Female",
+      "idCard": "91011",
+      "phone": 91011,
+      "customerType": {
+        "id": 1,
+        "name": "Member"
+      },
+      "address": "DN"
+    }
+  ],
+  "customerType": [
+    {
+      "id": 1,
+      "name": "Member"
+    },
+    {
+      "id": 2,
+      "name": "Silver"
+    },
+    {
+      "id": 3,
+      "name": "Gold"
+    },
+    {
+      "id": 4,
+      "name": "Platinium"
+    },
+    {
+      "id": 5,
+      "name": "Diamond"
+    }
+  ]
+}
